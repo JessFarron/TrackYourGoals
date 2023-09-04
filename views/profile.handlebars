@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/css/profile.css">
+
+
+<div class="container">
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-three-fifths is-offset-one-fifth">
+      <div class="columns">
+        <div class="column">
+          <div class="box has-text-centered" id="hello">
+            <div class="title is-size-6-mobile">
+              Hi, {{name}}
+            </div>
+            {{#if total_ongoing_sum}}
+            <p class="subtitle is-size-7-mobile">
+              You have ${{format_amount total_ongoing_sum}} as tracking total!
+            </p>
+            {{else}}
+            <p class="subtitle is-size-7-mobile">
+              Let´s start saving!
+            </p>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="goal-boxes">
+  <div class="columns is-multiline is-mobile">
+    {{#each objectives}}
+    {{> objectivesitems}}
+    {{/each}}
+  </div>
+</div>
+<div id="add-button-section" class="container has-text-centered">
+  <div class="column is-half is-offset-one-quarter">
+    <button onclick="openModalNewGoal();" class="button is-success is-justify-content-center">
+      Add new goal
+    </button>
+  </div>
+</div>
+
+<div class="modal" id="add-new-goal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add a new goal!</p>
+    </header>
+
+    <section class="modal-card-body">
+      <div class="field mr-3 ml-3">
+        <label class="label">Goal</label>
+        <div class="control">
+          <input id="profile-goal" class="input" type="text" placeholder="">
+        </div>
+      </div>
+
+      <div class="field mr-3 ml-3">
+        <label class="label">Amount to save ($)</label>
+        <div class="control has-icons-left has-icons-right">
+          <input id="target-quantity" class="input is-success" type="text" placeholder="Text input">
+          <span class="icon is-small is-left">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field mr-3 ml-3">
+        <label class="label">Description</label>
+        <div class="control">
+          <textarea id="profile-description" class="textarea" placeholder="Description"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <footer class="modal-card-foot">
+      <div class="field is-grouped mr-3 ml-3">
+        <button class="button is-success">Add goal</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+
+
+
+<script src="./js/objectives.js"></script> 

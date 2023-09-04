@@ -1,0 +1,17 @@
+<div class="column is-three-fifths is-offset-one-fifth">
+    <div class="box" id="goal-boxes">
+        <div class="title is-size-5">
+            <a href="/goal/{{id}}">{{name}}</a>
+        </div>
+        <div class="subtitle is-size-6">
+            {{description}}
+        </div>
+        <div class="progress-bar">
+            <progress class="progress is-primary" value="{{progress}}" max="100">{{progress}}%</progress> 
+        </div>
+        <div class="subtitle is-size-6">
+           <p>Your target is ${{format_amount target_quantity}}</p>
+        </div>
+        <button class="button is-danger is-small" data-id="{{id}}">Delete</button></td>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+[
+    {        
+        "user_id": 1,
+        "objective_id": 1,
+        "quantity": -400,
+        "description": "Retiro de efectivo"
+    },
+    {
+        "user_id": 1,
+        "objective_id": 1,
+        "quantity": 1000,
+        "description": "Depósito bancario"
+    },
+    {
+        "user_id": 1,
+        "objective_id": 2,
+        "quantity": 300,
+        "description": "Ingreso por venta"
+    }
+]

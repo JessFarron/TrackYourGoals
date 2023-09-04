@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="/css/goal.css">
+
+<div class="container">
+  <div class="columns is-multiline is-mobile is-justify-content-center">
+    <div class="column is-three-fifths is-flex is-flex-direction-column is-align-items-center">
+      <div class="title">{{name}}</div>
+      <div class="buttons are-small">
+        <button class="button" id="add-money-modal" onclick="openModalAddMoney();" class="button is-success">Add money</button>
+        <button class="button" id="remove-money-modal" onclick="openModalRemoveMoney();" class="button is-success">Remove money</button>
+        <button class="button" id="edit-goal-modal" onclick="openModalEditGoal();" class="button is-success">Edit Goal</button>
+        <button class="button" id="erase-goal" onclick="delButtonHandler();" class="button is-success">Delete Goal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="box">
+      <h2 class="title">Progress</h2>
+      <p>You have saved ${{format_amount progress}} from your ${{format_amount target_quantity}} goal.</p>
+      <div>
+        <canvas id="pieChart"> </canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="box is-flex is-flex-direction-column">
+      <h2 class="title">History</h2>
+      <table class="table has-text-centered">
+        <thead>
+          <tr>
+            <th><abbr title="date">Date</abbr></th>
+            <th><abbr title="amount">Amount</abbr></th>
+            <th><abbr title="description">Description</abbr></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          {{#each transactions}}
+          {{> transactionhistory}}
+          {{/each}}
+        </tbody>
+        
+      </table>
+    </div>
+  </div>
+  
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="box">
+      <h2 class="title">Statistics</h2>
+      <canvas id="transactionChart"></canvas>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- MODALS -->
+
+<!-- Edit Goal -->
+  <div class="modal" id="edit-goal">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Edit Goal</p>
+        </header>
+        
+        <section class="modal-card-body">
+          <div class="field mr-3 ml-3">
+            <label class="label">Rename your goal</label>
+            <div class="control">
+              <input id="goal-page-goal" class="input" type="text" placeholder="">
+            </div>
+          </div>
+
+          <div class="field mr-3 ml-3">
+            <label class="label">New amount to save ($)</label>
+            <div class="control has-icons-left has-icons-right">
+              <input id="target-quantity" class="input is-success" type="text" placeholder="">
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field mr-3 ml-3">
+            <label class="label">New description</label>
+            <div class="control">
+              <textarea id="edit-description" class="textarea" placeholder=""></textarea>
+          </div>
+        </section>
+
+        <footer class="modal-card-foot">
+          <div class="field is-grouped mr-3 ml-3">
+            <button class="button is-success" id="edit-submit-btn">Done</button>
+          </div>
+		    </footer>
+      </div>
+  </div>
+
+<!-- Add Money -->
+  <div class="modal" id="add-money">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Add money</p>
+        </header>
+
+        <section class="modal-card-body">
+          <div class="field mr-3 ml-3">
+            <label class="label">How much are you saving?</label>
+            <div class="control">
+              <input id="add-quantity" class="input" type="text" placeholder="">
+            </div>
+          </div>
+
+          <div class="field mr-3 ml-3">
+            <label class="label">Description</label>
+            <div class="control">
+              <input id="add-description" class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="field is-grouped mr-3 ml-3">
+            <button class="button is-success" id="add-submit-btn">Add Money</button>
+          </div>
+		    </footer>
+
+      </div>
+  </div>
+
+<!-- Remove Money -->
+  <div class="modal" id="remove-money">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Remove money</p>
+      </header>
+
+      <section class="modal-card-body">
+        <div class="field mr-3 ml-3">
+          <label class="label">How much are you using?</label>
+          <div class="control">
+            <input id="remove-quantity" class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <div class="field mr-3 ml-3">
+          <label class="label">Description</label>
+          <div class="control">
+            <input id="remove-description" class="input" type="text" placeholder="">
+          </div>
+        </div>
+      </section>
+
+      <footer class="modal-card-foot">
+        <div class="field is-grouped mr-3 ml-3">
+          <button class="button is-success" id="remove-submit-btn">Remove Money</button>
+        </div>
+		  </footer>
+    </div>
+  </div>
+
+
+
+  <script src="/js/goal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

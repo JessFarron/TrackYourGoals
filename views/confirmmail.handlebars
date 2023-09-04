@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/confirm-password-recovery.css">
+
+<div class="container">
+    <div class="columns is-multiline">
+        <div class="column is-8 is-offset-2 register">
+            <div class="columns">
+                <div class="column left is-flex-direction-column" id="left">
+                    <h1 class="title colored is-4">Sign Up</h1>
+                    <p class="subtitle">Check your email!</p>
+                    <div class="img">
+                        <object data="./img/confirmmail.svg" width="300px"></object>
+                    </div>
+                </div>
+            
+                <div class="column right is-flex is-justify-content-center" id="right">
+                    <form class="is-flex is-flex-direction-column is-justify-content-center" style="gap: 10px;"> 
+                        <div class="control is-flex is-flex-direction-column is-justify-content-center" style="gap: 10px;">
+                            <label for="confirm-mail">Introduce Confirmation Code:</label>
+                            <input id="confirmation-code" class="input is-primary" type="string" placeholder="6-digit Code">
+                        </div>
+                        
+                        <button id="confirm" class="button is-primary is-fullwidth" type="submit">Enter</button>
+                    </form>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+            
+
+
+<script src="./js/confirmation.js"></script>
+
+{{!--
+Añadir la ruta del script adecuado
+<script src="./js/login.js"></script>
+--}}
+
+<script src="https://kit.fontawesome.com/51d0cae634.js" crossorigin="anonymous"></script>

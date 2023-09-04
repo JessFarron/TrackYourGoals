@@ -1,0 +1,43 @@
+:root {
+    --brandColor: hsl(166, 67%, 51%);
+    --background: #DEE8D5;
+    --textDark: hsla(0, 0%, 0%, 0.66);
+    --textLight: hsla(0, 0%, 0%, 0.33);
+  }
+
+body {
+    background: var(--background);
+    color: var(--textDark);
+  }
+
+#hello {
+    background-color: #45BF78;
+}
+
+#hello .title {
+    color: white;
+}
+
+#hello .subtitle {
+    color: white;
+}
+
+#goal-boxes {
+    background-color: white;
+}
+
+#goal-boxes .title a {
+    color: #347942;
+    text-transform: uppercase;
+}
+
+#goal-boxes .subtitle {
+    color:  #45BF78;
+    text-transform: uppercase;
+}
+
+#goal-boxes .progress-bar {
+    padding-bottom: 10px;
+}
+
+@import 'bulma/css/bulma.css'

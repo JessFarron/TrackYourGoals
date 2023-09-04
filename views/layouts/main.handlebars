@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track your Goals</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/modal.css">
+
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar is-flex" style="background-color: rgba(255, 255, 255, 0);">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/profile" style="text-transform:uppercase;">
+          Track your Goals.
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            {{#if logged_in}}
+            <button class="button" class="button is-success" onclick="window.history.back();"><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="button" id="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <div class="box">
+        <p id="alertContent"></p>
+      </div>
+    </div>
+    <button id="closeAlert" class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <script src="/js/modal.js"></script>
+
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+
+
+
+  <script src="https://kit.fontawesome.com/51d0cae634.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

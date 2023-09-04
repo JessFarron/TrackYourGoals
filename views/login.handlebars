@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/login-signup.css">
+
+<div class="container">
+        <div class="columns is-multiline">
+        <div class="column is-8 is-offset-2 register">
+          <div class="columns">
+             <div class="column left" id="left-login">
+              <div class="img">
+              <object data="./img/login.svg" width="300px"></object>
+              </div>
+            </div>
+            <div class="column right" id="right-login">
+              <h1 class="title colored is-4">Login</h1>
+             <form>
+          <div class="field">
+            <div class="control">
+              <label for="email">Email</label>
+              <input id="email" class="input is-primary" type="text" placeholder="Email address">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <label for="password">Password</label>
+              <input id="password" class="input is-primary" type="password" placeholder="Password">
+            </div>
+          </div>
+       
+          <div class="field has-text-centered">
+            <a href="/recovery" class="is-size-8 has-text-primary">Forgot password?</a>
+
+          </div>
+      
+          <button id="login" class="button is-primary is-fullwidth" type="submit">Login</button>
+      
+          <div class="has-text-centered" style="padding-top:5px;">
+            <p class="is-size-8"> Don't have an account? 
+              <a href="/register" class="has-text-primary" id="signup-link">Sign up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./js/login.js"></script>
+
+<script src="https://kit.fontawesome.com/51d0cae634.js" crossorigin="anonymous"></script>

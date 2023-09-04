@@ -1,0 +1,9 @@
+<tr>
+    <th>{{format_date date_created}}</th>
+{{#if positive}}
+    <td class="has-text-success">${{format_amount quantity}}</td>
+    {{else}}
+    <td class="has-text-danger">${{format_amount quantity}}</td>
+    {{/if}}	    
+    <td>{{description}}</td>
+</tr>	

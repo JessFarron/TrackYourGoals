@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Zelda Hyrule",
+        "email": "zelda@example.com",
+        "password": "password1"
+    },
+    {
+        "name": "Mario Plumber",
+        "email": "mario@example.com",
+        "password": "password2"
+    },
+    {
+        "name": "Lara Croft",
+        "email": "lara@example.com",
+        "password": "password3"
+    }
+]

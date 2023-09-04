@@ -1,0 +1,57 @@
+:root {
+    --background: #45BF78;
+  }
+
+body {
+    background: var(--background);
+    height: 100vh;
+    color: var(--textDark);
+  }
+
+  .field:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .register {
+    margin-top: 10rem;
+    border-radius: 10px;
+  }
+
+  .left,
+  .right {
+    padding: 4.5rem;
+  }
+
+#left-login {
+    border-radius: 50px 0 0 0;
+    background-color: rgba(255, 255, 255, .5);
+    display: flex;
+}
+
+#left-login .img {
+    display: flex;
+    align-items: center;
+}
+
+#right-login {
+    border-radius: 0 50px 0 0;
+    background-color: white;
+  }
+
+#left-signup {
+    background-color: white;
+    border-radius: 50px 0 0 0;
+} 
+
+#right-signup {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 0 50px 0 0;
+    display: flex;
+}
+
+#right-signup .img {
+    display: flex;
+    align-items: center;
+}
+
+@import 'bulma/css/bulma.css'
